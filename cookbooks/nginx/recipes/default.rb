@@ -23,3 +23,14 @@ template "nginx.conf" do
   mode "0644"
   notifies :reload, 'service[nginx]'
 end
+
+%w/ octopress.conf dch.conf delp.conf /.each do |v_conf|
+  file "/etc/nginx/conf.d/#{v_conf}" do
+    owner "root"
+    group "root"
+    mode "0644"
+    content ::File.open("/home/dchoi/chef-repo/cookbooks/nginx/files/default/#{v_conf}").read
+    action :create
+    notifies :reload, 'service[nginx]'
+  end
+end
