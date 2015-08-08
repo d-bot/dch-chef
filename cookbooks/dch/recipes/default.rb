@@ -41,3 +41,38 @@ end
 gem_package "unicorn" do
   action :upgrade
 end
+
+###
+### dch.io home
+###
+git "/home/dchoi/projects/dch.io" do
+  repository "https://github.com/d-bot/dch.git"
+  reference "master"
+  action :sync
+  user "dchoi"
+  group "dchoi"
+end
+
+###
+### delp home
+###
+git "/home/dchoi/projects/delp" do
+  repository "https://github.com/d-bot/delp.git"
+  reference "master"
+  action :sync
+  user "dchoi"
+  group "dchoi"
+end
+
+###
+### octopress home
+###
+git "/home/dchoi/octopress/source/_posts" do
+  repository "https://github.com/d-bot/octopress.git"
+  reference "master"
+  action :sync
+  user "dchoi"
+  group "dchoi"
+end
+
+
