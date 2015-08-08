@@ -1,8 +1,0 @@
-{
-  "nginx": {
-    "worker" : 2
-  },
-  "run_list" :[
-    "nginx"
-  ]
-}
