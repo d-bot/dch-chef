@@ -2,17 +2,12 @@
 # Cookbook Name:: nginx
 # Recipe:: default
 #
-# Copyright 2015, YOUR_COMPANY_NAME
+# Copyright 2015, DCH
 #
 # All rights reserved - Do Not Redistribute
 #
 package "nginx" do
   action :install
-end
-
-service "nginx" do
-  supports :status => true, :restart => true, :reload => true
-  action [ :enable, :start ]
 end
 
 template "nginx.conf" do
@@ -22,6 +17,11 @@ template "nginx.conf" do
   group "root"
   mode "0644"
   notifies :reload, 'service[nginx]'
+end
+
+service "nginx" do
+  supports :status => true, :restart => true, :reload => true
+  action [ :enable, :start ]
 end
 
 %w/ octopress.conf dch.conf delp.conf /.each do |v_conf|
