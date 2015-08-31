@@ -42,6 +42,7 @@ gem_package "unicorn" do
   action :upgrade
 end
 
+=begin
 ###
 ### dch.io home
 ###
@@ -67,7 +68,7 @@ end
 ###
 ### octopress home
 ###
-git "/home/dchoi/octopress/source/_posts" do
+git "/home/dchoi/projects/octopress/source/_posts" do
   repository "https://github.com/d-bot/octopress.git"
   reference "master"
   action :sync
@@ -76,3 +77,4 @@ git "/home/dchoi/octopress/source/_posts" do
 end
 
 
+=end
