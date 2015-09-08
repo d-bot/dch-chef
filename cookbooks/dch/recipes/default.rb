@@ -22,6 +22,14 @@ file "/home/dchoi/.vimrc" do
   action :create
 end
 
+file "/home/dchoi/.tmux.conf" do
+  owner "dchoi"
+  group "dchoi"
+  mode "0644"
+  content ::File.open("/home/dchoi/chef-repo/cookbooks/dch/files/default/tmux.conf").read
+  action :create
+end
+
 %w/ hosts.allow hosts.deny /.each do |h_conf|
   file "/etc/#{h_conf}" do
     owner "root"
@@ -32,7 +40,7 @@ end
   end
 end
 
-%w/ rrdtool vim /.each do |pkg|
+%w/ rrdtool vim tmux /.each do |pkg|
   package pkg do
     action :install
   end
