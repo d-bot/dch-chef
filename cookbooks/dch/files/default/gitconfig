@@ -1,0 +1,16 @@
+[user]
+	name = d-bot
+	email = d-bot@gmail.com
+
+[alias]
+  st = status
+  ci = commit
+  br = branch
+  co = checkout
+  df = diff
+  lg = log -p
+
+[color "status"]
+  added = magenta
+  changed = yellow
+  untracked = cyan
