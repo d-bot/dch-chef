@@ -24,7 +24,7 @@ service "nginx" do
   action [ :enable, :start ]
 end
 
-%w/ octopress.conf dch.conf delp.conf /.each do |v_conf|
+%w/ pylog.conf rulog.conf dch.conf delp.conf /.each do |v_conf|
   file "/etc/nginx/conf.d/#{v_conf}" do
     owner "root"
     group "root"
