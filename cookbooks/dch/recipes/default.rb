@@ -49,7 +49,7 @@ end
   end
 end
 
-%w/ rrdtool vim tmux /.each do |pkg|
+%w/ sendmail rrdtool vim tmux /.each do |pkg|
   package pkg do
     action :install
   end
