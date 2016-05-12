@@ -39,6 +39,14 @@ file "/home/dchoi/.tmux.conf" do
   action :create
 end
 
+file "/etc/hosts" do
+  owner "dchoi"
+  group "dchoi"
+  mode "0644"
+  content ::File.open("/home/dchoi/chef-repo/cookbooks/dch/files/default/hosts").read
+  action :create
+end
+
 %w/ hosts.allow hosts.deny /.each do |h_conf|
   file "/etc/#{h_conf}" do
     owner "root"
