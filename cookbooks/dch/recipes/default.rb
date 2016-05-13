@@ -103,3 +103,9 @@ end
 
 
 =end
+
+link '/etc/pki/tls/certs/ca-bundle.crt' do
+  to '/etc/ssl/certs/ca-certificates.crt'
+  link_type :symbolic
+end
+
