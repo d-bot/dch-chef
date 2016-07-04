@@ -136,6 +136,8 @@ let g:vroom_map_keys = 0
 map <leader>t :VroomRunTestFile<cr>
 map <leader>T :VroomRunNearestTest<cr>
 
+hi CursorLine   cterm=NONE ctermbg=darkred ctermfg=white guibg=darkred guifg=white
+
 "==== Colorscheme
 "Bundle \"altercation/vim-colors-solarized"
 "let g:solarized_termcolors=256
