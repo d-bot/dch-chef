@@ -22,6 +22,13 @@ file "/home/dchoi/.vimrc" do
   action :create
 end
 
+file "/home/dchoi/.bashrc" do
+  owner "dchoi"
+  group "dchoi"
+  mode "0644"
+  content ::File.open("/home/dchoi/chef-repo/cookbooks/dch/files/default/bashrc").read
+  action :create
+end
 
 file "/home/dchoi/.gitconfig" do
   owner "dchoi"
