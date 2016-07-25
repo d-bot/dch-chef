@@ -116,3 +116,29 @@ link '/etc/pki/tls/certs/ca-bundle.crt' do
   link_type :symbolic
 end
 
+cron 'rrd' do
+  minute '*/5'
+  user 'dchoi'
+  mailto 'dchoi-bot@gmail.com'
+  command 'ruby /home/dchoi/projects/dch.io/lib/rrd_scripts/update.rb && ruby /home/dchoi/projects/dch.io/lib/rrd_scripts/graph.rb'
+end
+
+cron 'fitbit' do
+  minute '0'
+  hour '10,14,19,21'
+  user 'dchoi'
+  path 'PATH=/usr/local/rvm/gems/ruby-2.1.1/bin:/usr/local/rvm/gems/ruby-2.1.1@global/bin:/usr/local/rvm/rubies/ruby-2.1.1/bin:/usr/local/rvm/bin:/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin:/usr/games:/usr/local/games'
+  mailto 'dchoi-bot@gmail.com'
+  command 'ruby /home/dchoi/hacks/fitbit.rb'
+  #command %W{
+  #  ruby /home/dchoi/hacks/fitbit.rb
+  #}.join(' ')
+
+  #command %W{
+  #  cd /srv/supermarket/current &&
+  #  env RUBYLIB="/srv/supermarket/current/lib"
+  #  RAILS_ASSET_ID=`git rev-parse HEAD` RAILS_ENV="#{rails_env}"
+  #  bundle exec rake cookbooks_report
+  #}.join(' ')
+
+end
