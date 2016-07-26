@@ -70,8 +70,12 @@ end
   end
 end
 
-gem_package "unicorn" do
-  action :upgrade
+
+%w/ unicorn mechanize dotenv nokogiri sinatra redcarpet rack rdiscount yelp /.each do |pkg|
+  gem_package pkg do
+    #source "github.com"
+    action :install
+  end
 end
 
 =begin
