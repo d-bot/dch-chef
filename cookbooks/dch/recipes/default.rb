@@ -64,7 +64,7 @@ end
   end
 end
 
-%w/ sendmail rrdtool vim tmux /.each do |pkg|
+%w/ python3-pip ipython3 ipython3-notebook python-pip ipython ipython-notebook sendmail rrdtool vim tmux /.each do |pkg|
   package pkg do
     action :install
   end

@@ -1,0 +1,13 @@
+[1mdiff --git a/cookbooks/dch/recipes/default.rb b/cookbooks/dch/recipes/default.rb[m
+[1mindex 8982c86..b6fbfb2 100644[m
+[1m--- a/cookbooks/dch/recipes/default.rb[m
+[1m+++ b/cookbooks/dch/recipes/default.rb[m
+[36m@@ -64,7 +64,7 @@[m [mend[m
+   end[m
+ end[m
+ [m
+[31m-%w/ sendmail rrdtool vim tmux /.each do |pkg|[m
+[32m+[m[32m%w/ python3-pip ipython3 ipython3-notebook python-pip ipython ipython-notebook sendmail rrdtool vim tmux /.each do |pkg|[m
+   package pkg do[m
+     action :install[m
+   end[m
